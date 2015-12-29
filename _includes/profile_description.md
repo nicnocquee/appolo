@@ -1,0 +1,1 @@
+Add description about you in \_includes/profile\_description.md. You can use [markdown](https://daringfireball.net/projects/markdown/) in the description. The avatar can be set in *author:avatar* in \_config.yml. The background image of this profile card can be set in *author:header_bg* in \_config.yml.

@@ -1,0 +1,46 @@
+---
+layout: post
+title:  "Meeru for Mac"
+subtitle: "Multiple videos. At the same time."
+date:   2015-12-25 09:32:24
+categories: mac
+permalink: "meeru"
+device: "imac"
+app_preview: "/images/meeru/preview-meeru.png"
+name: "Meeru"
+tagline: "Watch multiple videos simultaneously"
+app_icon: "/images/meeru/Meeru.png"
+facebook:
+    image: "/images/meeru/fb.png"
+
+---
+
+
+{% img center | /images/meeru/meeru-1.png | Meeru for Mac %}
+
+{% textalign center %}
+Meeru is the app that allows you to play multiple videos from streaming websites at the same time.
+{% endtextalign %}
+
+{% section_title Supported services %}
+
+<ul class="meeru_services">
+    <li>&#xe80c;</li>
+    <li>&#xe80d;</li>
+    <li class="ted">TED</li>
+</ul>
+
+{% youtube tQzKfvn3RZY %}
+
+{% section_title Features %}
+
+{% features %}
+Play up to 10 videos at the same time.
+Add and remove videos without hassle.
+Move position of a video simply by dragging it around.
+Save the video lists to a .meeru file. Simply double click the .meeru file to re-open all the saved videos.
+{% endfeatures %}
+
+{% section_title Download %}
+
+{% img center | /images/app_store_coming_soon.png | Coming Soon %}

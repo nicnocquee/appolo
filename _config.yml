@@ -1,0 +1,21 @@
+# Site settings
+title: CompanyName
+email: you@CompanyName.com
+description: "Edit description in _config.yml"
+info: "Edit this info in _config.yml"
+message: "Edit this message in _config.yml"
+keywords: "mac,apple,iphone,ios,osx,games,apps,development"
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://www.delightfuldev.com" # the base hostname & protocol for your site
+twitter_username: companytwitter
+# Build settings
+markdown: kramdown
+author:
+    name: Your Name
+    twitter: yourtwitter
+    url: http://www.yoururl.com
+    header_bg: /images/profile-header.png
+    avatar: /images/avatar.jpg
+    email: you@CompanyName.com
+facebook:
+    image: /images/delightfuldev-facebook-cover.png

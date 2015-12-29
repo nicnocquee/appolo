@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+      <div class="container">
+          {% include header.html %}
+
+          {{ content }}
+
+
+      </div>
+
+      <section class="content">
+      	<button class="button button--close"><i class="icon icon--circle-cross"></i><span class="text-hidden">Close content</span></button>
+      </section>
+
+      <section class="profile">
+
+          <div style="position: relative;z-index: 1000;" id="profile_card_parent">
+              <div class="card hovercard" id="profile_card">
+                  <a class="bp-icon bp-icon-close" id="close_profile"><span></span></a>
+                  <div class="cardheader" style="background: url('{{ site.author.header_bg | prepend: site.baseurl }}') no-repeat center">
+
+                  </div>
+                  <div class="avatar">
+                      <img alt="" src="{{ site.author.avatar | prepend: base.url }}">
+                  </div>
+                  <div class="info">
+                      <div class="title">
+                          <a target="_blank" href="{{ site.author.url }}">{{ site.author.name }}</a>
+                      </div>
+                      <div class="desc">{% markdown %}{% include profile_description.md %}{% endmarkdown %}</div>
+                  </div>
+                  <div class="bottom">
+                      <a class="btn btn-primary btn-twitter btn-sm" href="mailto:{{ site.author.email }}">
+                          Contact me
+                      </a>
+                  </div>
+              </div>
+          </div>
+
+      </section>
+
+
+    <script src="{{ "/js/classie.js" | prepend: site.baseurl }}"></script>
+  	<script src="{{ "/js/dynamics.min.js" | prepend: site.baseurl }}"></script>
+  	<script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
+  </body>
+
+
+</html>

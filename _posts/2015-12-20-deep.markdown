@@ -1,0 +1,49 @@
+---
+layout: post
+title:  "Deep for iPhone"
+subtitle: "That deep quote. On a stunning image."
+date:   2015-12-20 12:32:24
+categories: iphone
+permalink: "deep"
+device: "iphone"
+app_preview: "/images/deep/preview-deep.png"
+name: "Deep"
+tagline: "Embed quotes on captivating images"
+app_icon: "/images/deep/Deep.png"
+---
+
+
+
+{% img center | /images/deep/deep-1.png | Deep for iPhone %}
+
+{% textalign center %}
+Introducing Deep for iPhone. Featuring an easy-to-use gesture-based navigation, Deep has been designed to help you quickly compose quotes and embed them to attractive images for more engaging social media updates. You can never go wrong with more than 1000 visually stunning photos to choose from, carefully selected fonts, and brilliant image effects.
+{% endtextalign %}
+
+{% section_title Choose the best image effect for maximum impact. %}
+{% img center | /images/deep/deep-2.png | Deep for iPhone %}
+{% textalign center %}
+Deep comes with four brilliant image effects for you to choose from, depending on the mood you want to convey.
+Simply swipe left or right to change the effect.
+{% endtextalign %}
+
+{% img fill-width | /images/deep/deep-3.jpeg | Deep for iPhone %}
+
+{% section_title Match the background photo with what you want to convey. %}
+{% img center | /images/deep/deep-4.png | Deep for iPhone %}
+{% textalign center %}
+Deep gives you access to more than 1000 stunning photos in a growing list of categories. Let your inspiring quotes about people look incredibly amazing with any of the photos in People category, for example.
+{% endtextalign %}
+
+{% img fill-width | /images/deep/deep-5.jpg | Deep for iPhone %}
+
+{% section_title Save time with intuitive gestures. %}
+{% img center | /images/deep/deep-6.png | Deep for iPhone %}
+{% textalign center %}
+Swipe left or right to quickly change image effects. Swipe up or down to swiftly change fonts. Pinch in or out to easily change the size of the text. Single tap on certain areas of the photo to effortlessly change text position and alignment. Double tap to edit the text.
+{% endtextalign %}
+
+
+{% section_title Download %}
+
+{% download app_store | https://itunes.apple.com/app/apple-store/id985064577?pt=320144&ct=Deep%20Website%20Bottom&mt=8 %}

@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<div style="width: 100%; flex: 1; position: relative;">
+    <div style="display: flex; flex-direction: column; height: 88%; width: 100%; position: absolute; justify-content: center;">
+        <section class="slider" id="main_slider">
+            {% for post in site.posts %}
+            <div class="slide" data-content="{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.permalink }}{% endif %}">
+                <div class="slide__mover">
+                    <div class="zoomer flex-center">
+                        <img class="zoomer__image" src="/images/{{ post.device }}.png" alt="{{ post.device }}" />
+                        <div class="preview">
+                            {% assign app_preview = '/images/' | append: post.name | downcase | append: '/preview.png'  %}
+                            {% if post.app_preview %}
+                                {% assign app_preview = post.app_preview %}
+                            {% endif %}
+                            <img src="{{ app_preview }}" alt="{{ post.name }}" />
+                            <div class="zoomer__area zoomer__area--size-5"></div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="slide__title">{{ post.name }}<span>{{ post.tagline }}</span></h2>
+            </div>
+            {% endfor %}
+        	<nav class="slider__nav">
+        		<button class="button button--nav-prev"><i class="icon icon--arrow-left"></i><span class="text-hidden">Previous product</span></button>
+        		<button class="button button--zoom"><i class="icon icon--zoom"></i><span class="text-hidden">View details</span></button>
+        		<button class="button button--nav-next"><i class="icon icon--arrow-right"></i><span class="text-hidden">Next product</span></button>
+        	</nav>
+        </section>
+    </div>
+
+</div>

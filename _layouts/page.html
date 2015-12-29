@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<section class="content content--open">
+	<div class="content__item content__item--current content__item--reset">
+		<div class="content__item-inner">
+			<img class="content__item-img" src="{{ post.app_icon | prepend: site.baseurl }}" alt="{{ post.title }}" />
+			<h2>{{ page.title }}</h2>
+			<h3>{{ page.subtitle }}</h3>
+
+            {{ content }}
+
+			<div class="footer">
+				{{ site.copyright }}
+			</div>
+		</div>
+	</div>
+
+	<button class="button button--close"><i class="icon icon--circle-cross"></i><span class="text-hidden">Close content</span></button>
+</section>
