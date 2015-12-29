@@ -16,7 +16,12 @@ module Jekyll
 
     def render(context)
         text = super
-        rendered = "<p class=\""+@alignmentClass+"\">"+text+"</p>"
+        site = context.registers[:site]
+        converter = site.find_converter_instance(::Jekyll::Converters::Markdown)
+        output = converter.convert(text)
+        output.gsub! "<p>", ""
+        output.gsub! "</p>", ""
+        rendered = "<p class=\""+@alignmentClass+"\">"+output+"</p>"
         return rendered
     end
   end
