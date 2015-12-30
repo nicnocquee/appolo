@@ -32,6 +32,7 @@ permalink | NEEDED. This sets the app's URL to baseurl/permalink.
 device | Type of device to use for this app in the landing page. Available options: imac, macbook, iphone, ipad, and apple-watch.
 name | Name of the app that is shown on the landing page.
 tagline | Shown under `name` on the landing page.
+external_url | OPTIONAL. If you want to open external URL when user clicks on the app, set this variable.
 
 Writing a new app page
 --
@@ -82,6 +83,7 @@ Icons
 
 - [Feather Icons](https://gumroad.com/l/feather) by Cole Bemis.
 - Icon font created with [IcoMoon](https://icomoon.io) and [Fontello](http://fontello.com).
+
 
 LICENSE
 --
