@@ -159,7 +159,7 @@
 			profileCardParent.addEventListener('animationend', function() {
 				classie.remove(profileCardParent, 'animated');
 				if (isShowingProfile) {
-					classie.remove(profileCard, 'bounceIn');
+					classie.remove(profileCardParent, 'bounceIn');
 					profileCard.style.visibility = 'visible';
 					profileCard.style.zIndex = 1000;
 					var closeProfileButton = document.querySelector('#close_profile');
