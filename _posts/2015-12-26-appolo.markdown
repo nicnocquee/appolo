@@ -12,7 +12,7 @@ tagline: "App Portfolio for App developers"
 ---
 
 
-{% img center | /images/meeru/meeru-1.png | Meeru for Mac %}
+{% img center | /images/appolo/appolo-on-devices.png | Appolo for Jekyll %}
 
 {% textalign center %}
 Introducing Appolo, a set of plugins and themes for [Jekyll](http://jekyllrb.com) to create a static portfolio website for app developers to showcase their work. Its minimalistic theme and playful animations make it perfect to display the amazing apps you have made. The responsive design looks perfect in desktop or mobile. It also comes with a set of plugins to remove the hassle of formatting your apps' pages. The theme is based on a [Zoom Slider demo](http://tympanus.net/codrops/2015/07/06/zoom-slider/) in [Codrops](http://tympanus.net/codrops).
