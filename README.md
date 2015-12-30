@@ -5,7 +5,7 @@ Appolo is a set of plugins and themes for [Jekyll](http://jekyllrb.com) to creat
 Made by a developer. For developers.
 --
 
-There are so many single page landing page for showcasing a single app. But I need a theme to showcase multiple apps and I couldn't find it. And since I've been using Github with Jekyll and Octopress to blog, I figured it'd be nice to have a Jekyll them for apps showcase. This theme is based on a [Zoom Slider demo](http://tympanus.net/codrops/2015/07/06/zoom-slider/) in [Codrops](http://tympanus.net/codrops). Appolo also comes with custom [Liquid](https://github.com/Shopify/liquid/wiki) tags to help writing an app's page easier.
+There are so many single page landing page for showcasing a single app. But I need a theme to showcase multiple apps and I couldn't find it. And since I've been using Github with Jekyll and Octopress to blog, I figured it'd be nice to have a Jekyll them for apps showcase. This theme is based on a [Zoom Slider demo](http://tympanus.net/codrops/2015/07/06/zoom-slider/) in [Codrops](http://tympanus.net/codrops). Appolo also comes with custom [Liquid](https://github.com/Shopify/liquid/wiki) tags to help writing an app's page easier. Check out my [apps' website](http://www.delightfuldev.com) to see it in action.
 
 Quick start
 --
@@ -41,11 +41,11 @@ Appolo comes with some custom [Liquid](https://github.com/Shopify/liquid/wiki) t
 Tag | Description
 ------------- | -------------
 `{% section_title Section Title Here %}` | Use this tag to render a section title.
-`{% img alignment \| relative_path_to_image \| alt %}` | Use `img` tag to render an image with an assigned `alignment`. You can use one of the four alignments: `center`, `right`, `left`, or `fill-width`.
+<code>{% img alignment &#124; relative_path_to_image &#124; alt %}</code> | Use `img` tag to render an image with an assigned `alignment`. You can use one of the four alignments: `center`, `right`, `left`, or `fill-width`.
 `{% textalign center %}` | Use `textalign` block to set the paragraph alignment.
 `{% youtube youtube_id %}` | Use `youtube` followed by the id of the video to show a responsive YouTube frame.
 `{% features %}` | Use `features` block to list the features of your apps.
-`{% download type \| url %}` | Use `download` tag to render a button to download your app. Available options for `type` are `app_store`, `play_store`, `direct`, and `coming_soon`.
+<code>{% download type &#124; url %}</code> | Use `download` tag to render a button to download your app. Available options for `type` are `app_store`, `play_store`, `direct`, and `coming_soon`.
 
 App's Images
 --
@@ -57,3 +57,32 @@ Image Name | Size | Description
 preview.png | 321 x 193 px | This preview image is used on the landing page. It is positioned inside the device you chose for the app.
 icon.png | 512 x 512 px | Icon of the app.
 fb.png | 1200 x 630 px | The image for Facebook Open Graph.
+
+Credits
+--
+
+- Original theme by [Codrops](http://tympanus.net/codrops).
+- [Dynamic.js](http://dynamicsjs.com/) by Michaël Villar.
+- [Modernizr](http://modernizr.com/) by the Modernizr Team.
+- [Animate.css](https://github.com/daneden/animate.css) by Daniel Eden.
+- [Hammer.js](https://github.com/hammerjs/hammer.js) by Eight Media Team.
+
+Images
+--
+
+- [Flat Apple Devices](http://drbl.in/jsoj) by Peter Finlan.
+- [Apple Watch](http://drbl.in/mNVE) by Vincent Le Moign.
+- [Website Mockup "Space Exploration"](http://drbl.in/oMJD) by Ante Matijaca.
+- [Free To-Do App UI](http://www.invisionapp.com/do/sketchappsources) by InVision.
+- [Pex: Free Website PSD](http://blazrobar.com/2015/free-psd-website-templates/pex-a-free-website-home-page-photoshop-psd/) by Blaz.
+- [Perspective App Screen Mockup](http://graphicburger.com/perspective-app-screens-mock-up/) by GraphicBurger.
+
+Icons
+--
+
+- [Feather Icons](https://gumroad.com/l/feather) by Cole Bemis.
+- Icon font created with [IcoMoon](https://icomoon.io) and [Fontello](http://fontello.com).
+
+LICENSE
+--
+MIT
