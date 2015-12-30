@@ -1,10 +1,12 @@
 <header class="bp-header cf">
-	<span>{{ site.title }} <span class="bp-icon bp-icon-about" id="site-info-button"  data-content="{{ site.info }}"></span></span>
-	<div id="site-info">{{ site.info }}</div>
-	<h1>{{ site.message }}</h1>
-	<nav>
-		<a class="bp-icon bp-icon-child" id="hire_me_button" data-info="Hire Me"><span>Hire Me</span></a>
-		<a href="{{ site.twitter_username | prepend: "https://twitter.com/" }}" class="bp-icon bp-icon-twitter" data-info="@{{ site.twitter_username }}" target="_blank"><span>@{{ site.twitter_username }}</span></a>
-		<a href="mailto:{{ site.email }}" class="bp-icon bp-icon-email" data-info="send me e-mail"><span>send me e-mail</span></a>
-	</nav>
+	{% if page.title == null %}
+		<span>{{ site.title }} <span class="bp-icon bp-icon-about" id="site-info-button"  data-content="{{ site.info }}"></span></span>
+		<div id="site-info">{{ site.info }}</div>
+		<h1>{{ site.message }}</h1>
+		<nav>
+			<a class="bp-icon bp-icon-child" id="hire_me_button" data-info="Hire Me"><span>Hire Me</span></a>
+			<a href="{{ site.twitter_username | prepend: "https://twitter.com/" }}" class="bp-icon bp-icon-twitter" data-info="@{{ site.twitter_username }}" target="_blank"><span>@{{ site.twitter_username }}</span></a>
+			<a href="mailto:{{ site.email }}" class="bp-icon bp-icon-email" data-info="send me e-mail"><span>send me e-mail</span></a>
+		</nav>
+	{% endif %}
 </header>

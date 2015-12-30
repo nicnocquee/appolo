@@ -15,32 +15,36 @@
       <section class="content">
       </section>
 
-      <section class="profile">
+      {% if page.title == null %}
+          <section class="profile">
 
-          <div style="position: relative;z-index: 1000;" id="profile_card_parent">
-              <div class="card hovercard" id="profile_card">
-                  <a class="bp-icon bp-icon-close" id="close_profile"><span></span></a>
-                  <div class="cardheader" style="background: url('{{ site.author.header_bg | prepend: site.baseurl }}') no-repeat center">
+              <div style="position: relative;z-index: 1000;" id="profile_card_parent">
+                  <div class="card hovercard" id="profile_card">
+                      <a class="bp-icon bp-icon-close" id="close_profile"><span></span></a>
+                      <div class="cardheader" style="background: url('{{ site.author.header_bg | prepend: site.baseurl }}') no-repeat center">
 
-                  </div>
-                  <div class="avatar">
-                      <img alt="" src="{{ site.author.avatar | prepend: base.url }}">
-                  </div>
-                  <div class="info">
-                      <div class="title">
-                          <a target="_blank" href="{{ site.author.url }}">{{ site.author.name }}</a>
                       </div>
-                      <div class="desc">{% markdown %}{% include profile_description.md %}{% endmarkdown %}</div>
-                  </div>
-                  <div class="bottom">
-                      <a class="btn btn-primary btn-twitter btn-sm" href="mailto:{{ site.author.email }}">
-                          Contact me
-                      </a>
+                      <div class="avatar">
+                          <img alt="" src="{{ site.author.avatar | prepend: base.url }}">
+                      </div>
+                      <div class="info">
+                          <div class="title">
+                              <a target="_blank" href="{{ site.author.url }}">{{ site.author.name }}</a>
+                          </div>
+                          <div class="desc">{% markdown %}{% include profile_description.md %}{% endmarkdown %}</div>
+                      </div>
+                      <div class="bottom">
+                          <a class="btn btn-primary btn-twitter btn-sm" href="mailto:{{ site.author.email }}">
+                              Contact me
+                          </a>
+                      </div>
                   </div>
               </div>
-          </div>
 
-      </section>
+          </section>
+      {% endif %}
+
+
 
 
     <script src="{{ "/js/classie.js" | prepend: site.baseurl }}"></script>
