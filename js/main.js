@@ -40,6 +40,19 @@
 		scrollContainer = document.querySelector('.container'),
 		// the main slider and its items
 		sliderEl = document.querySelector('.slider');
+		var qs = (function(a) {
+		    if (a == "") return {};
+		    var b = {};
+		    for (var i = 0; i < a.length; ++i)
+		    {
+		        var p=a[i].split('=', 2);
+		        if (p.length == 1)
+		            b[p[0]] = "";
+		        else
+		            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+		    }
+		    return b;
+		})(window.location.search.substr(1).split('&'));
 		var items;
 		var itemsTotal;
 		var navRightCtrl;
@@ -74,6 +87,7 @@
 		initialHireMeButtonClass = hireMeButton.className,
 		profileSection = document.querySelector(".profile"),
 		profileCard = document.querySelector("#profile_card"),
+		profileCardParent = document.querySelector('#profile_card_parent'),
 		isShowingProfile = false,
 		initialProfileCardClass = profileCard.className,
 		mainSlider = document.querySelector("#main_slider");
@@ -141,8 +155,9 @@
 		}
 
 		if (hireMeButton) {
-			profileCard.addEventListener('animationend', function() {
-				classie.remove(profileCard, 'animated');
+
+			profileCardParent.addEventListener('animationend', function() {
+				classie.remove(profileCardParent, 'animated');
 				if (isShowingProfile) {
 					classie.remove(profileCard, 'bounceIn');
 					profileCard.style.visibility = 'visible';
@@ -152,13 +167,12 @@
 					profileSection.style.zIndex = 1000;
 					profileSection.style.visibility = 'visible';
 				} else {
-					classie.remove(profileCard, 'bounceOutUp');
+					classie.remove(profileCardParent, 'bounceOutUp');
 					profileCard.style.visibility = 'hidden';
 					profileCard.style.zIndex = 0;
 					mainSlider.style.opacity = 1;
 					var closeProfileButton = document.querySelector('#close_profile');
 					closeProfileButton.style.visibility = 'hidden';
-					var profileCardParent = document.querySelector('#profile_card_parent');
 					profileCardParent.style.visibility = 'hidden';
 					profileCardParent.style.zIndex = 0;
 					profileSection.style.zIndex = 0;
@@ -169,7 +183,6 @@
 			hireMeButton.addEventListener('click', function(){
 				if (!isShowingProfile) {
 					isShowingProfile = true;
-					var profileCardParent = document.querySelector('#profile_card_parent');
 					profileCardParent.style.visibility = 'visible';
 					profileCard.style.visibility = 'visible';
 					profileCard.style.zIndex = 1000;
@@ -177,8 +190,8 @@
 					profileSection.style.zIndex = 1000;
 					profileSection.style.visibility = 'visible';
 
-					classie.add(profileCard, 'animated');
-					classie.add(profileCard, 'bounceIn');
+					classie.add(profileCardParent, 'animated');
+					classie.add(profileCardParent, 'bounceIn');
 					mainSlider.style.opacity = 0.1;
 				} else {
 					closeProfileCard();
@@ -260,8 +273,8 @@
 
 	function closeProfileCard () {
 		isShowingProfile = false;
-		classie.add(profileCard, 'animated');
-		classie.add(profileCard, 'bounceOutUp');
+		classie.add(profileCardParent, 'animated');
+		classie.add(profileCardParent, 'bounceOutUp');
 	}
 
 	// opens one item
@@ -315,7 +328,7 @@
 
 			isOpen = false;
 
-			window.location = '/'+item.getAttribute('data-content');
+			window.location = '/'+item.getAttribute('data-content')+'?fr='+current;
 
 			return;
 		});
@@ -323,7 +336,6 @@
 
 	// closes the item/content
 	function closeContent() {
-
 		var contentItem = contentEl.querySelector('.content__item--current');
 
 		var appIcon = document.querySelector('#app-icon');
@@ -354,7 +366,12 @@
 			// reset scrolling permission
 			lockScroll = false;
 			scrollContainer.removeEventListener('scroll', noscroll);
-			window.history.back();
+
+			if (qs["fr"] > 0) {
+				window.history.back();
+			} else {
+				window.location = '/';
+			}
 		});
 	}
 
