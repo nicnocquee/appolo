@@ -5,7 +5,7 @@ Appolo is a set of plugins and themes for [Jekyll](http://jekyllrb.com) to creat
 Made by a developer. For developers.
 --
 
-There are so many single page landing page for showcasing a single app. But I need a theme to showcase multiple apps and I couldn't find it. And since I've been using Github with Jekyll and Octopress to blog, I figured it'd be nice to have a Jekyll them for apps showcase. This theme is based on a [Zoom Slider demo](http://tympanus.net/codrops/2015/07/06/zoom-slider/) in [Codrops](http://tympanus.net/codrops). Appolo also comes with custom [Liquid](https://github.com/Shopify/liquid/wiki) tags to help writing an app's page easier. Check out my [apps' website](http://www.delightfuldev.com) to see it in action.
+There are so many single page landing page for showcasing a single app. But I need a theme to showcase multiple apps and I couldn't find it. And since I've been using Github with Jekyll and Octopress to blog, I figured it'd be nice to have a Jekyll theme for apps showcase. This theme is based on a [Zoom Slider demo](http://tympanus.net/codrops/2015/07/06/zoom-slider/) in [Codrops](http://tympanus.net/codrops). Appolo also comes with custom [Liquid](https://github.com/Shopify/liquid/wiki) tags to help writing an app's page easier. Check out my [apps' website](http://www.delightfuldev.com) to see it in action.
 
 Quick start
 --
