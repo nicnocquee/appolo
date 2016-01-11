@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="author" content="{{ site.author.name }}" />
-  <meta name="description" content="{% if page.description %}{{ page.description }}{% else if page.subtitle %}{{ page.subtitle }}{% else if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" >
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.subtitle %}{{ page.subtitle }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" >
   <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}" >
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
   <link rel="stylesheet" href="{{ "/css/component.css" | prepend: site.baseurl }}">
@@ -17,8 +17,8 @@
   <script src="/js/hammer.min.js"></script>
   {% if site.facebook %}
   <meta property="og:site_name" content="{% if page.facebook.site_name %}{{ page.facebook.site_name }}{% else %}{{ site.title }}{% endif %}"/>
-  <meta property="og:title" content="{% if page.facebook.site_name %}{{ page.facebook.title }}{% else if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"/>
-  <meta property="og:description" content="{% if page.facebook.description %}{{ page.facebook.description }}{% else if page.subtitle %}{{ page.subtitle }}{% else if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+  <meta property="og:title" content="{% if page.facebook.site_name %}{{ page.facebook.title }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"/>
+  <meta property="og:description" content="{% if page.facebook.description %}{{ page.facebook.description }}{% elsif page.subtitle %}{{ page.subtitle }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
   {% assign fb_img_default = 'images/' | append: page.name | downcase | append: '/fb.png'  %}
   {% assign fb_img = '' %}
   {% if page.title %}
@@ -28,7 +28,7 @@
       {% else %}
           {% if page.facebook.image %}
               {% assign fb_img = page.facebook.image | prepend: site.baseurl | prepend: site.url %}
-          {% else if site.facebook.image %}
+          {% elsif site.facebook.image %}
               {% assign fb_img = site.facebook.image | prepend: site.baseurl | prepend: site.url %}
           {% else %}
               {% assign fb_img = '' %}
@@ -40,7 +40,7 @@
 
   <meta property="og:image" content="{{ fb_img }}" />
   <meta property="og:type" content="{% if page.facebook.type %}{{ page.facebook.type }}{% else %}{{ "website" }}{% endif %}" />
-  <meta property="og:url" content="{% if page.facebook.url %}{{ page.facebook.url }}{% else if page.url %}{{ page.url | prepend: site.url }}{% else %}{{  site.url }}{% endif %}" >
+  <meta property="og:url" content="{% if page.facebook.url %}{{ page.facebook.url }}{% elsif page.url %}{{ page.url | prepend: site.url }}{% else %}{{  site.url }}{% endif %}" >
   {% endif %}
 
 </head>
