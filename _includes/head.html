@@ -10,11 +10,11 @@
   <link rel="stylesheet" href="{{ "/css/component.css" | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ "/css/demo.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="shortcut icon" href="{% if page.favicon %}{{ page.favicon }}{% else %}{{ "favicon.ico" }}{% endif %}">
+  <link rel="shortcut icon" href="{% if page.favicon %}{{ page.favicon | prepend: site.baseurl }}{% else %}{{ "favicon.ico" }}{% endif %}">
   <link rel="stylesheet" type="text/css" href="{{ "/fonts/feather/style.css" | prepend: site.baseurl }}">
   <link rel="stylesheet" type="text/css"  href="{{ "/css/animate.min.css" | prepend: site.baseurl  }}">
-  <script src="/js/modernizr.custom.js"></script>
-  <script src="/js/hammer.min.js"></script>
+  <script src="{{ "/js/modernizr.custom.js" | prepend: site.baseurl }}"></script>
+  <script src="{{ "/js/hammer.min.js" | prepend: site.baseurl }}"></script>
   {% if site.facebook %}
   <meta property="og:site_name" content="{% if page.facebook.site_name %}{{ page.facebook.site_name }}{% else %}{{ site.title }}{% endif %}"/>
   <meta property="og:title" content="{% if page.facebook.site_name %}{{ page.facebook.title }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"/>

@@ -12,6 +12,8 @@ module Jekyll
     end
 
     def render(context)
+        site = context.registers[:site]
+        @src = site.baseurl + @src
         if @alignment.downcase == "fill-width"
             # See below for explanation of [[[[  ]]]]
             "[[[[  <img class=\""+@alignmentClass+"\" src=\""+@src+"\" alt=\""+@alt+"\" /> ]]]]"

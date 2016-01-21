@@ -5,16 +5,17 @@ layout: default
     <div style="display: flex; flex-direction: column; height: 88%; width: 100%; position: absolute; justify-content: center;">
         <section class="slider" id="main_slider">
             {% for post in site.posts %}
-            <div class="slide" data-content="{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.permalink }}{% endif %}">
+            <div class="slide" data-content="{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.permalink | prepend: site.baseurl }}{% endif %}">
                 <div class="slide__mover">
                     <div class="zoomer flex-center">
-                        <img class="zoomer__image" src="/images/{{ post.device }}.png" alt="{{ post.device }}" />
+                        {% assign device_image = '/images/' | append: post.device | append: '.png' | prepend: site.baseurl %}
+                        <img class="zoomer__image" src="{{ device_image }}" alt="{{ post.device }}" />
                         <div class="preview">
                             {% assign app_preview = '/images/' | append: post.name | downcase | append: '/preview.png'  %}
                             {% if post.app_preview %}
                                 {% assign app_preview = post.app_preview %}
                             {% endif %}
-                            <img src="{{ app_preview }}" alt="{{ post.name }}" />
+                            <img src="{{ app_preview | prepend: site.baseurl }}" alt="{{ post.name }}" />
                             <div class="zoomer__area zoomer__area--size-5"></div>
                         </div>
                     </div>
