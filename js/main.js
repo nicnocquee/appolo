@@ -371,7 +371,11 @@
 			if (qs["fr"] > 0) {
 				window.history.back();
 			} else {
-				window.location = {{ site.baseurl }};
+				{% if site.baseurl == '' %}
+					window.location = '/';
+				{% else %}
+					window.location = {{ site. baseurl }};
+				{% endif %}
 			}
 		});
 	}

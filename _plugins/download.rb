@@ -19,7 +19,7 @@ module Jekyll
 
     def render(context)
         site = context.registers[:site]
-        @img = site.baseurl + @img
+        @img = site.baseurl + (@img ? @img : "")
         if @url.length > 0
             if @text
                 rendered = "<p style=\"text-align: center\"><a href=\""+@url+"\" class=\"centerbutton\">"+@text+"</a></p>"
