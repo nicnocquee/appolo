@@ -59,6 +59,11 @@ preview.png | 321 x 193 px | This preview image is used on the landing page. It 
 icon.png | 512 x 512 px | Icon of the app.
 fb.png | 1200 x 630 px | The image for Facebook Open Graph.
 
+Known Issue
+--
+
+If you got `"Your site is having problems building: The tag img in _posts/2015-12-20-deep.markdown/#excerpt is not a recognized Liquid tag"`, check out the workaround [here](https://github.com/nicnocquee/appolo/issues/4#issuecomment-170936958).
+
 Credits
 --
 
