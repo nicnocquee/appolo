@@ -5,7 +5,7 @@ description: "Edit description in _config.yml"
 info: "Edit this info in _config.yml"
 message: "Edit this message in _config.yml"
 keywords: "mac,apple,iphone,ios,osx,games,apps,development"
-baseurl: "/blog/" # the subpath of your site, e.g. /blog/
+baseurl: "/Appolo-demo/" # the subpath of your site, e.g. /blog/
 url: "http://www.delightfuldev.com" # the base hostname & protocol for your site
 twitter_username: companytwitter
 # Build settings
