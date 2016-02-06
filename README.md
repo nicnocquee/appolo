@@ -63,7 +63,7 @@ Known Issue
 --
 
 - If you got `"Your site is having problems building: The tag img in _posts/2015-12-20-deep.markdown/#excerpt is not a recognized Liquid tag"`, check out the workaround [here](https://github.com/nicnocquee/appolo/issues/4#issuecomment-170936958).
-- If you're using Appolo for a Github Project Page, set the `baseurl` in `_config.yml` to `/<project_name>/`. So if you're project's URL is `http(s)://<username>.github.io/<projectname>`, the `baseurl` should be `/<projectname>/`.
+- If you're using Appolo for a Github Project Page, set the `baseurl` in `_config.yml` to `/<project_name>/`. So if you're project's URL is `http(s)://<username>.github.io/<projectname>`, the `baseurl` should be `/<projectname>/`. Check out the [Appolo-demo repository](https://github.com/nicnocquee/Appolo-demo) and its corresponding [page](http://www.nicnocquee.com/Appolo-demo/).
 
 Credits
 --
