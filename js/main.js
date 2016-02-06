@@ -139,16 +139,38 @@
 	// event binding
 	function initEvents() {
 
-		var hash = getHashValue('#');
-		if (hash > 0) {
-			items.forEach(function(item) { classie.remove(item, 'slide--current'); });
-			classie.add(items[hash], 'slide--current');
-			current = parseInt(hash);
+		var prevPage = getCookie('appolo_prev_page');
+		
+		
+		if (prevPage.length > 0) {
+		var baseUrl = '{{ site.baseurl }}';
+		var removedBaseUrl = prevPage.replace(baseUrl, '');
+		var prevItem = removedBaseUrl.replace(/\//g, '');
+			console.log('prev page: '+prevItem);
+			
+			if (items && items.length > 0) {
+				items.forEach(function(item) { classie.remove(item, 'slide--current'); });
+				current = 0;
+				var i;
+				for (i = 0; i < items.length; i++) {
+					var dataContent = items[i].getAttribute('data-content');
+					
+					var n = dataContent.indexOf(prevItem);
+					if (n != -1) {
+						current = i;
+						break;
+					}
+				}
+				console.log('current: '+current);
+				classie.add(items[current], 'slide--current');
+			}
 		} else {
-			if (items) {
-				classie.add(items[0], 'slide--current');
+			if (items && items.length > 0) {
+				current = 0;
+				classie.add(items[current], 'slide--current');
 			}
 		}
+		
 
 		if (infoButton && isMobile()) {
 			infoButton.addEventListener('click', function() {
@@ -278,6 +300,36 @@
 		classie.add(profileCardParent, 'animated');
 		classie.add(profileCardParent, 'bounceOutUp');
 	}
+	
+	function setCookie(cname, cvalue, exdays) {
+		var d = new Date();
+		d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		var expires = "expires="+d.toUTCString();
+		document.cookie = cname + "=" + cvalue + "; " + expires;
+	}
+
+	function getCookie(cname) {
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0; i<ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') c = c.substring(1);
+			if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+		}
+		return "";
+	}
+
+	function checkCookie() {
+		var user = getCookie("username");
+		if (user != "") {
+			alert("Welcome again " + user);
+		} else {
+			user = prompt("Please enter your name:", "");
+			if (user != "" && user != null) {
+				setCookie("username", user, 365);
+			}
+		}
+	}
 
 	// opens one item
 	function openItem(item) {
@@ -332,7 +384,8 @@
 
 			isOpen = false;
 
-			window.location = item.getAttribute('data-content')+'?fr='+current;
+			setCookie('appolo_prev_page', item.getAttribute('data-content'), 1);
+			window.location = item.getAttribute('data-content');
 
 			return;
 		});
@@ -367,16 +420,14 @@
 			// reset scrolling permission
 			lockScroll = false;
 			scrollContainer.removeEventListener('scroll', noscroll);
-
-			if (qs["fr"] > 0) {
-				window.history.back();
-			} else {
-				{% if site.baseurl == '' %}
-					window.location = '/';
-				{% else %}
-					window.location = {{ site. baseurl }};
-				{% endif %}
-			}
+			
+			setCookie('appolo_prev_page', window.location.pathname, 1);
+			{% if site.baseurl != '' %}
+				window.location = '{{ site.baseurl }}';
+			{% else %}
+				window.location = '/';
+			{% endif %}
+			
 		});
 	}
 
@@ -468,12 +519,6 @@
 			points: [{"x":0,"y":0,"cp":[{"x":0.2,"y":1}]},{"x":1,"y":1,"cp":[{"x":0.3,"y":1}]}],
 			duration: 650
 		});
-
-		if (current > 0) {
-			window.history.replaceState(null, '', '#'+current);
-		} else {
-			window.history.replaceState(null, '', '#');
-		}
 
 		if (current % 2 == 0) {
 			hireMeButton.className = hireMeButton.className + " animated rubberBand";
